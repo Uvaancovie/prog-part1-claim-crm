@@ -1,0 +1,141 @@
+﻿@{
+    ViewData["Title"] = "Upload Supporting Documents";
+}
+
+<!-- Importing Font Awesome for icons and Google Fonts for Poppins -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Custom Styles for Dark Theme -->
+<style>
+    body {
+        background-color: #000; /* Black background */
+        color: #fff; /* White font */
+        font-family: 'Poppins', sans-serif; /* Poppins font */
+    }
+
+    h1, h2, h3, p, label {
+        color: #fff; /* Ensure all headings, labels, and text are white */
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .infographics {
+        color: #fff;
+        font-size: 50px;
+        margin-bottom: 15px;
+    }
+
+    .instructions {
+        background-color: #111;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+    }
+
+    .form-container {
+        background-color: #111;
+        padding: 30px;
+        border-radius: 10px;
+    }
+
+    .form-control {
+        background-color: #333; /* Dark background for input fields */
+        color: #fff; /* White text for inputs */
+        border: 1px solid #555; /* Slight border for inputs */
+    }
+
+        .form-control:focus {
+            background-color: #222; /* Darker focus effect */
+            color: #fff;
+            border-color: #007bff; /* Blue border on focus */
+        }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+    .icon-lg {
+        font-size: 3rem;
+        color: #007bff;
+    }
+
+    .step {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+        .step .icon-lg {
+            margin-right: 15px;
+        }
+</style>
+
+<div class="container mt-5">
+    <!-- Page Header -->
+    <div class="text-center mb-5">
+        <h1 class="display-4">Upload Supporting Documents</h1>
+        <p class="lead">Follow the instructions below to upload the necessary documents for your claims.</p>
+    </div>
+
+    <!-- Instructions Section with Infographics -->
+    <div class="instructions">
+        <h2 class="mb-4">How to Upload Documents</h2>
+
+        <!-- Step 1: Choose Document -->
+        <div class="step">
+            <i class="fas fa-file-upload icon-lg"></i>
+            <div>
+                <h4>Step 1: Select the Document</h4>
+                <p>Click on the “Choose File” button to upload the supporting documents related to your claim. Ensure the file format is either PDF, Word, or Excel.</p>
+            </div>
+        </div>
+
+        <!-- Step 2: Verify the Document -->
+        <div class="step">
+            <i class="fas fa-check icon-lg"></i>
+            <div>
+                <h4>Step 2: Verify the Document</h4>
+                <p>Before submitting, ensure the correct document has been selected. You can recheck the file details.</p>
+            </div>
+        </div>
+
+        <!-- Step 3: Upload the Document -->
+        <div class="step">
+            <i class="fas fa-cloud-upload-alt icon-lg"></i>
+            <div>
+                <h4>Step 3: Upload the Document</h4>
+                <p>Click on the “Upload” button to submit the document. Once uploaded, you will receive a confirmation.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Document Upload Form -->
+    <div class="form-container">
+        <div class="form-header text-center">
+            <h2>Upload Your Document</h2>
+            <p>Select the file you want to upload for your claim.</p>
+        </div>
+
+        <form asp-action="UploadDocuments" method="post" enctype="multipart/form-data">
+            <!-- Upload Supporting Documents -->
+            <div class="form-group">
+                <label for="document">Choose File:</label>
+                <input type="file" id="document" name="document" class="form-control-file" required>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary btn-lg"><i class="fas fa-cloud-upload-alt"></i> Upload</button>
+            </div>
+        </form>
+    </div>
+</div>

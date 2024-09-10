@@ -1,0 +1,172 @@
+﻿@{
+    ViewData["Title"] = "Verify Claims";
+}
+
+<!-- Importing Font Awesome for icons and Google Fonts for Poppins -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Custom Styles for Dark Theme -->
+<style>
+    body {
+        background-color: #000; /* Black background */
+        color: #fff; /* White font */
+        font-family: 'Poppins', sans-serif; /* Poppins font */
+    }
+
+    h1, h2, h3, p, label {
+        color: #fff; /* Ensure all headings, labels, and text are white */
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .infographics {
+        color: #fff;
+        font-size: 50px;
+        margin-bottom: 15px;
+    }
+
+    .instructions {
+        background-color: #111;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+    }
+
+    .form-container {
+        background-color: #111;
+        padding: 30px;
+        border-radius: 10px;
+    }
+
+    .table {
+        background-color: #222;
+        color: #fff;
+        border-collapse: separate;
+        border-spacing: 0 10px;
+    }
+
+        .table th, .table td {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .table th {
+            background-color: #333;
+        }
+
+        .table td {
+            background-color: #444;
+            border-bottom: 2px solid #555;
+        }
+
+    .btn-success, .btn-danger {
+        color: #fff;
+        border: none;
+    }
+
+        .btn-success:hover, .btn-danger:hover {
+            transform: scale(1.05);
+        }
+
+    .icon-lg {
+        font-size: 3rem;
+        color: #28a745; /* Green for verify */
+    }
+
+    .step {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+        .step .icon-lg {
+            margin-right: 15px;
+        }
+</style>
+
+<div class="container mt-5">
+    <!-- Page Header -->
+    <div class="text-center mb-5">
+        <h1 class="display-4">Verify Submitted Claims</h1>
+        <p class="lead">Follow the steps below to verify and approve or reject claims submitted by lecturers.</p>
+    </div>
+
+    <!-- Instructions Section with Infographics -->
+    <div class="instructions">
+        <h2 class="mb-4">How to Verify Claims</h2>
+
+        <!-- Step 1: Review Claim Details -->
+        <div class="step">
+            <i class="fas fa-file-alt icon-lg"></i>
+            <div>
+                <h4>Step 1: Review Claim Details</h4>
+                <p>Check the claim details submitted by the lecturer. Ensure that the total hours worked and supporting documents are accurate.</p>
+            </div>
+        </div>
+
+        <!-- Step 2: Approve or Reject Claim -->
+        <div class="step">
+            <i class="fas fa-check-circle icon-lg"></i>
+            <div>
+                <h4>Step 2: Approve or Reject the Claim</h4>
+                <p>Based on the claim details, approve or reject the claim using the buttons provided in the table. You can provide feedback if necessary.</p>
+            </div>
+        </div>
+
+        <!-- Step 3: Notify Lecturer -->
+        <div class="step">
+            <i class="fas fa-bell icon-lg"></i>
+            <div>
+                <h4>Step 3: Notify the Lecturer</h4>
+                <p>Once the claim is approved or rejected, the lecturer will be automatically notified of the decision. No additional action is required from your side.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Claims Verification Table -->
+    <div class="form-container">
+        <h2 class="text-center">Submitted Claims</h2>
+        <p class="text-center">Below are the claims submitted by lecturers. Review them carefully and take appropriate action.</p>
+
+        <table class="table table-hover mt-4">
+            <thead>
+                <tr>
+                    <th>Lecturer</th>
+                    <th>Month</th>
+                    <th>Total Hours</th>
+                    <th>Document</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Example claim row -->
+                <tr>
+                    <td>John Doe</td>
+                    <td>August 2024</td>
+                    <td>30</td>
+                    <td><a href="#">Download</a></td>
+                    <td><span class="badge bg-warning text-dark">Pending</span></td>
+                    <td>
+                        <button class="btn btn-success">Approve</button>
+                        <button class="btn btn-danger">Reject</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Jane Smith</td>
+                    <td>September 2024</td>
+                    <td>25</td>
+                    <td><a href="#">Download</a></td>
+                    <td><span class="badge bg-warning text-dark">Pending</span></td>
+                    <td>
+                        <button class="btn btn-success">Approve</button>
+                        <button class="btn btn-danger">Reject</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

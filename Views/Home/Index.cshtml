@@ -1,0 +1,130 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- Importing Font Awesome for icons and Google Fonts for Poppins -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Custom Styles for Dark Theme -->
+<style>
+    body {
+        background-color: #000; /* Black background */
+        color: #fff; /* White font */
+        font-family: 'Poppins', sans-serif; /* Poppins font */
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    h1, h2, h3, h4, p {
+        color: #fff; /* Ensure all headings and text are white */
+    }
+
+    a {
+        color: #007bff; /* Bootstrap primary color for links */
+    }
+
+    a.btn {
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+    }
+
+    a.btn:hover {
+        background-color: #0056b3;
+        transform: scale(1.05); /* Slight animation on hover */
+    }
+
+    .jumbotron {
+        background-color: #111; /* Slightly lighter black for jumbotron */
+        padding: 40px;
+        border-radius: 10px;
+    }
+
+    .text-primary {
+        color: #007bff !important;
+    }
+
+    .text-success {
+        color: #28a745 !important;
+    }
+
+    .text-warning {
+        color: #ffc107 !important;
+    }
+
+    .text-info {
+        color: #17a2b8 !important;
+    }
+
+    .btn-primary, .btn-success, .btn-warning, .btn-info {
+        color: #fff !important;
+    }
+
+    .btn-primary:hover, .btn-success:hover, .btn-warning:hover, .btn-info:hover {
+        opacity: 0.8;
+    }
+</style>
+
+<div class="container mt-5">
+    <!-- Welcome Message -->
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Welcome to Claims Submission System</h1>
+        <p class="lead">Streamlining the process for lecturers to submit claims and for administrators to verify, track, and manage them.</p>
+        <hr class="my-4">
+        <p>This system allows lecturers to easily submit claims for their work, upload supporting documents, track their claim status, and more. Programme Coordinators and Academic Managers can verify and approve these claims with ease.</p>
+    </div>
+
+    <!-- How the Site Works Section -->
+    <div class="row text-center mt-5">
+        <div class="col-md-12">
+            <h2>How the Site Works</h2>
+            <p>Follow these simple steps to use the system:</p>
+        </div>
+    </div>
+
+    <!-- Instructions with Icons and Diagrams -->
+    <div class="row text-center mt-4">
+        <!-- Submit Claims -->
+        <div class="col-md-3">
+            <i class="fas fa-file-invoice-dollar fa-4x text-primary"></i>
+            <h3 class="mt-3">Submit Claims</h3>
+            <p>Lecturers can submit their claims for hours worked by filling out a simple form. Click the "Submit Claims" button and enter the necessary details.</p>
+            <a class="btn btn-primary" href="/Home/SubmitClaim">Submit a Claim</a>
+        </div>
+
+        <!-- Verify Claims -->
+        <div class="col-md-3">
+            <i class="fas fa-check-circle fa-4x text-success"></i>
+            <h3 class="mt-3">Verify Claims</h3>
+            <p>Programme Coordinators and Academic Managers can verify and approve submitted claims. Review the claims and approve or reject them with just a click.</p>
+            <a class="btn btn-success" href="/Home/VerifyClaims">Verify Claims</a>
+        </div>
+
+        <!-- Upload Documents -->
+        <div class="col-md-3">
+            <i class="fas fa-upload fa-4x text-warning"></i>
+            <h3 class="mt-3">Upload Documents</h3>
+            <p>Lecturers can upload supporting documents for their claims. Easily attach files and keep track of all required documents.</p>
+            <a class="btn btn-warning" href="/Home/UploadDocuments">Upload Documents</a>
+        </div>
+
+        <!-- Track Status -->
+        <div class="col-md-3">
+            <i class="fas fa-tasks fa-4x text-info"></i>
+            <h3 class="mt-3">Track Status</h3>
+            <p>Keep track of your submitted claims and check their status in real-time. Know when your claim is approved or if further action is needed.</p>
+            <a class="btn btn-info" href="/Home/TrackStatus">Track Status</a>
+        </div>
+    </div>
+
+    <!-- Additional Information Section -->
+    <div class="row text-center mt-5">
+        <div class="col-md-12">
+            <h2>Consistent and Reliable Information</h2>
+            <p>Our system provides consistent and reliable information at all times. Whether you're submitting a claim or verifying one, you can trust the process to be fast and accurate.</p>
+        </div>
+    </div>
+</div>

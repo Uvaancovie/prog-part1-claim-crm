@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ClaimsSubmission</title>
+
+    <!-- Link to Bootstrap, Font Awesome and Google Fonts for Poppins -->
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+
+    <!-- Custom Styles for Black and White Theme -->
+    <style>
+        body {
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+            font-family: 'Poppins', sans-serif; /* Poppins font */
+        }
+
+        .navbar {
+            background-color: #111; /* Black navbar */
+        }
+
+        .navbar-nav .nav-item {
+            text-align: center; /* Center the text and icon */
+        }
+
+            .navbar-nav .nav-item .nav-link {
+                color: #fff; /* White icons and text */
+                font-size: 1.5rem; /* Icon size */
+            }
+
+                .navbar-nav .nav-item .nav-link:hover {
+                    color: #007bff; /* Blue on hover */
+                    transform: scale(1.1); /* Slight scale effect */
+                }
+
+        .navbar-brand {
+            color: #fff; /* White brand text */
+            font-size: 1.8rem;
+        }
+
+        .navbar-toggler {
+            border: none;
+        }
+
+        .navbar-nav .nav-item small {
+            display: block; /* Display small text under the icon */
+            font-size: 0.75rem; /* Small text size */
+            color: #aaa; /* Grey color for descriptions */
+        }
+
+        footer {
+            background-color: #111;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #007bff;
+        }
+
+            .footer a:hover {
+                color: #0056b3;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark">
+            <div class="container-fluid">
+                <!-- Brand Name -->
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Claims</a>
+
+                <!-- Toggler for Mobile View -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navbar Links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <!-- Home Icon with Description -->
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+                                <i class="fas fa-home"></i>
+                                <small>Home</small>
+                            </a>
+                        </li>
+
+                        <!-- Submit Claims Icon with Description -->
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="SubmitClaim">
+                                <i class="fas fa-file-invoice-dollar"></i>
+                                <small>Submit Claims</small>
+                            </a>
+                        </li>
+
+                        <!-- Verify Claims Icon with Description -->
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="VerifyClaims">
+                                <i class="fas fa-check-circle"></i>
+                                <small>Verify Claims</small>
+                            </a>
+                        </li>
+
+                        <!-- Upload Documents Icon with Description -->
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="UploadDocuments">
+                                <i class="fas fa-upload"></i>
+                                <small>Upload Docs</small>
+                            </a>
+                        </li>
+
+                        <!-- Track Status Icon with Description -->
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="TrackStatus">
+                                <i class="fas fa-tasks"></i>
+                                <small>Track Status</small>
+                            </a>
+                        </li>
+
+                        <!-- Privacy Policy Icon with Description -->
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">
+                                <i class="fas fa-user-shield"></i>
+                                <small>Privacy</small>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; @DateTime.Now.Year - ClaimsSubmission - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

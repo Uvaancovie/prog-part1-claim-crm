@@ -1,0 +1,166 @@
+﻿@{
+    ViewData["Title"] = "Submit Claims";
+}
+
+<!-- Importing Font Awesome for icons and Google Fonts for Poppins -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Custom Styles for Dark Theme -->
+<style>
+    body {
+        background-color: #000; /* Black background */
+        color: #fff; /* White font */
+        font-family: 'Poppins', sans-serif; /* Poppins font */
+    }
+
+    h1, h2, h3, p, label {
+        color: #fff; /* Ensure all headings, labels, and text are white */
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .form-control {
+        background-color: #333; /* Dark background for input fields */
+        color: #fff; /* White text for inputs */
+        border: 1px solid #555; /* Slight border for inputs */
+    }
+
+        .form-control:focus {
+            background-color: #222; /* Darker focus effect */
+            color: #fff;
+            border-color: #007bff; /* Blue border on focus */
+        }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+    .infographics {
+        color: #fff;
+        font-size: 50px;
+        margin-bottom: 15px;
+    }
+
+    .instructions {
+        background-color: #111;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+    }
+
+    .form-container {
+        background-color: #111;
+        padding: 30px;
+        border-radius: 10px;
+    }
+
+    .form-header {
+        margin-bottom: 20px;
+    }
+
+    .icon-lg {
+        font-size: 3rem;
+        color: #007bff;
+    }
+
+    .step {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+        .step .icon-lg {
+            margin-right: 15px;
+        }
+</style>
+
+<div class="container mt-5">
+    <!-- Page Header -->
+    <div class="text-center mb-5">
+        <h1 class="display-4">Submit Your Claim</h1>
+        <p class="lead">Follow the steps below to submit your claims easily and efficiently.</p>
+    </div>
+
+    <!-- Instructions Section with Infographics -->
+    <div class="instructions">
+        <h2 class="mb-4">How to Submit Your Claim</h2>
+
+        <!-- Step 1: Select Month -->
+        <div class="step">
+            <i class="fas fa-calendar-alt icon-lg"></i>
+            <div>
+                <h4>Step 1: Select the Month and Year</h4>
+                <p>Choose the month and year for which you are submitting your claim. Ensure that the correct period is selected.</p>
+            </div>
+        </div>
+
+        <!-- Step 2: Enter Hours Worked -->
+        <div class="step">
+            <i class="fas fa-clock icon-lg"></i>
+            <div>
+                <h4>Step 2: Enter Total Hours Worked</h4>
+                <p>Input the total number of hours worked for the selected period. Double-check the hours for accuracy before submission.</p>
+            </div>
+        </div>
+
+        <!-- Step 3: Upload Supporting Documents -->
+        <div class="step">
+            <i class="fas fa-file-upload icon-lg"></i>
+            <div>
+                <h4>Step 3: Upload Supporting Documents (Optional)</h4>
+                <p>If you have any supporting documents related to your claim, you can upload them here. This is optional but recommended for accurate processing.</p>
+            </div>
+        </div>
+
+        <!-- Step 4: Submit -->
+        <div class="step">
+            <i class="fas fa-paper-plane icon-lg"></i>
+            <div>
+                <h4>Step 4: Submit Your Claim</h4>
+                <p>Once you’ve entered all the details and uploaded any necessary documents, click the submit button to finalize your claim.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Claim Submission Form -->
+    <div class="form-container">
+        <div class="form-header text-center">
+            <h2>Claim Submission Form</h2>
+            <p>Please fill out the following information to submit your claim.</p>
+        </div>
+
+        <form asp-action="SubmitClaim" method="post" enctype="multipart/form-data">
+            <!-- Month and Year of Claim -->
+            <div class="form-group">
+                <label for="month">Month and Year of Claim:</label>
+                <input type="month" id="month" name="month" class="form-control" required>
+            </div>
+
+            <!-- Total Hours Worked -->
+            <div class="form-group mt-3">
+                <label for="hours">Total Hours Worked:</label>
+                <input type="number" id="hours" name="hours" class="form-control" placeholder="Enter the total hours" required>
+            </div>
+
+            <!-- Upload Supporting Documents -->
+            <div class="form-group mt-3">
+                <label for="document">Upload Supporting Documents (Optional):</label>
+                <input type="file" id="document" name="document" class="form-control-file">
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Submit Claim</button>
+            </div>
+        </form>
+    </div>
+</div>
